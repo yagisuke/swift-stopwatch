@@ -30,14 +30,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCd-Nk-f0g">
                                         <rect key="frame" x="0.0" y="0.0" width="91.5" height="30"/>
                                         <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tRg-eG-B4U"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnr-Bz-aAZ">
                                         <rect key="frame" x="91.5" y="0.0" width="92" height="30"/>
                                         <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="stopTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gn5-sl-z3Z"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ab7-m6-QPw">
                                         <rect key="frame" x="183.5" y="0.0" width="91.5" height="30"/>
                                         <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ql2-aV-5TN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -52,6 +61,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="3cI-gT-8AF" id="ELV-BQ-Hbf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
