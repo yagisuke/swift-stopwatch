@@ -21,8 +21,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @objc func update() {
+        print(Date.timeIntervalSinceReferenceDate)
+    }
 
     @IBAction func startTimer(_ sender: Any) {
+        Timer.scheduledTimer(
+            timeInterval: 0.01,
+            target: self,
+            selector: #selector(self.update),
+            userInfo: nil,
+            repeats: true)
     }
 
     @IBAction func stopTimer(_ sender: Any) {
