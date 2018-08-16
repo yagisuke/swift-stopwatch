@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var timerLabel: UILabel!
+    
+    var startTime: TimeInterval? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +25,19 @@ class ViewController: UIViewController {
     }
     
     @objc func update() {
-        print(Date.timeIntervalSinceReferenceDate)
+        if let startTime = self.startTime {
+            let t: Double = Date.timeIntervalSinceReferenceDate - startTime
+            
+            let min = Int(t / 60)
+            let sec = Int(t) % 60
+            let msec = Int((t - Double(sec)) * 100.0)
+            self.timerLabel.text = String.init(format: "%02d:%02d:%02d", min, sec, msec)
+        }
     }
 
     @IBAction func startTimer(_ sender: Any) {
+        self.startTime = Date.timeIntervalSinceReferenceDate
+
         Timer.scheduledTimer(
             timeInterval: 0.01,
             target: self,
